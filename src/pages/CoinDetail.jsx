@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router";
 import { fetchChartData, fetchCoinData } from "../api/coinGecko";
 import { useEffect, useState } from "react";
-import { formatPrice } from "../utils/formatter";
+import { formatMarketCap, formatPrice } from "../utils/formatter";
 import {
     CartesianGrid,
     XAxis,
@@ -173,9 +173,40 @@ export const CoinDetail = () => {
                 </div>
 
                 <div className="stats-grid">
-                    <div className="stat-card"></div>
+                    <div className="stat-card">
+                        <span className="stat-label">Market Cap</span>
+                        <span className="stat-value">${formatMarketCap(coin.market_data.market_cap.usd)}</span>
+                    </div>
+                </div>
+
+                <div className="stats-grid">
+                    <div className="stat-card">
+                        <span className="stat-label">Volume (24) </span>
+                        <span className="stat-value">${formatMarketCap(coin.market_data.total_volume.usd)}</span>
+                    </div>
+                </div>
+
+                <div className="stats-grid">
+                    <div className="stat-card">
+                        <span className="stat-label">Circulating Supply</span>
+                        <span className="stat-value">
+                            {coin.market_data.circulating_supply?.toLocaleString() || "N/A"}
+                        </span>
+                    </div>
+                </div>
+
+                <div className="stats-grid">
+                    <div className="stat-card">
+                        <span className="stat-label">Total Supply</span>
+                        <span className="stat-value">
+                            {coin.market_data.total_supply?.toLocaleString() || "N/A"}
+                        </span>
+                    </div>
                 </div>
             </div>
+            <footer className="footer">
+                <p>Data provided by CoinGecko API • Updated every 30 seconds</p>
+            </footer>
         </div>
     );
 };

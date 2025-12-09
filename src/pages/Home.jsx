@@ -14,7 +14,9 @@ export const Home = () => {
 
     
     useEffect(() => {
-        fetchCryptoData();
+        const interval = setInterval(fetchCryptoData, 3000);
+
+        return () => clearInterval(interval)
     }, [])
 
     useEffect(() => {
@@ -111,6 +113,10 @@ export const Home = () => {
                 ))}
             </div>
         )}
+        <footer className="footer">
+            <p>Data provided by CoinGecko API • Updated every 30 seconds</p>
+        </footer>
+
         </div>
     );
 };
