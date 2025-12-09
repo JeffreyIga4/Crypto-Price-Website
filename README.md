@@ -1,3 +1,47 @@
+# Crypto Tracker
+
+A simple real-time cryptocurrency tracker built with React and the CoinGecko API.  
+Search for cryptocurrencies, view detailed market data, and explore individual coin pages through a clean and responsive UI.
+
+---
+
+## Features
+
+- Search and filter cryptocurrencies  
+- View real-time price, symbol, rank, and market information  
+- Navigate to a detailed coin page  
+- Return to the full list easily  
+- Fully responsive and modern interface  
+- Fast and lightweight thanks to Vite + React Hooks
+
+---
+
+## How to Use
+
+- Browse the crypto list on the home page  
+- Click any coin to view detailed information  
+- Use the Back button to return to the list  
+- All data is fetched from CoinGecko’s public API
+
+---
+
+## Run the App Locally
+
+Install dependencies:
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
